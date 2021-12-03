@@ -1,0 +1,11 @@
+@import '../../assets/styles/all';
+
+.text {
+    margin: 0;
+}
+
+@each $size, $value in $fs {
+    .text-#{$size} {
+        font-size: $value;
+    }
+}

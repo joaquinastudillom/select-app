@@ -1,0 +1,61 @@
+@import '../../assets/styles/all';
+
+.select {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include padding('xs');
+        border: 1px solid $form-border-color;
+        background: $form-bg-color;
+        font-family: $body-font-family;
+        cursor: pointer;
+    }
+
+    &-caret {
+        transition: all 250ms ease;
+
+        &--open {
+            transform: rotate(180deg);
+        }
+
+        &--close {
+            transform: rotate(0deg);
+        }
+    }
+
+    &-overlay {
+        @include padding('none');
+        @include margin('none');
+        border: 1px solid $form-border-color;
+        background: $form-bg-color;
+        z-index: 99;
+        position: absolute;
+        width: 100%;
+        box-shadow: map-get($shadows, 'base');
+    }
+
+    &-option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        @include padding('xs');
+        box-sizing: border-box;
+
+        &--selected {
+            background: $form-bg-option-selected;
+            color: $form-color-option-selected;
+        }
+
+        &--highlighted {
+            background-color: $form-bg-color-hover;
+            color: $form-color-option-selected;
+        }
+    }
+}
